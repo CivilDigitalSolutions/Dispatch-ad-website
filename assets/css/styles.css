@@ -302,6 +302,32 @@ h4 { font-size: var(--fs-500); }
   padding: var(--sp-4) var(--sp-5); color: var(--body); margin: var(--sp-6) 0;
 }
 
+/* ---- Roles & permissions table -------------------------------------------- */
+.role-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-6); margin-bottom: var(--sp-9); }
+.perm-group + .perm-group { margin-top: var(--sp-8); }
+.perm-group h2 { margin-bottom: var(--sp-4); }
+.table-wrap { overflow-x: auto; margin: 0 0 var(--sp-5); -webkit-overflow-scrolling: touch; }
+.data-table { width: 100%; min-width: 40rem; border-collapse: collapse; text-align: left; }
+.data-table thead th {
+  border-bottom: 1px solid var(--line); padding: var(--sp-3) var(--sp-3) var(--sp-2);
+  font-size: var(--fs-300); font-weight: 700; color: var(--navy);
+}
+.data-table th[scope="row"] {
+  border-bottom: 1px solid var(--line); padding: var(--sp-4) var(--sp-3) var(--sp-4) 0;
+  font-weight: 400; text-align: left; vertical-align: top; min-width: 14rem;
+}
+.data-table tbody tr:last-child th[scope="row"],
+.data-table tbody tr:last-child td { border-bottom: 0; }
+.perm-label { display: block; font-size: var(--fs-400); font-weight: 600; color: var(--navy); }
+.perm-desc { display: block; margin-top: 2px; font-size: var(--fs-300); color: var(--muted); }
+.data-table td.role-col, .data-table th.role-col {
+  width: 8.5rem; text-align: center; vertical-align: top;
+  border-bottom: 1px solid var(--line); padding: var(--sp-4) var(--sp-2);
+}
+.tick-yes { font-size: 1.2em; font-weight: 700; color: var(--teal-dark); }
+.tick-no { font-size: 1.2em; color: var(--muted); }
+.own-only { display: block; margin-top: 2px; font-size: 0.75rem; color: var(--muted); }
+
 /* ---- FAQ (native details/summary, no JS needed) -------------------------- */
 .faq { max-width: var(--maxw-prose); margin: 0 auto; display: grid; gap: var(--sp-3); }
 .faq details {
@@ -327,7 +353,7 @@ h4 { font-size: var(--fs-500); }
 @media (max-width: 860px) {
   .hero .container { grid-template-columns: 1fr; padding-top: var(--sp-7); padding-bottom: var(--sp-7); }
   .hero__art { order: -1; }
-  .features, .steps { grid-template-columns: 1fr; }
+  .features, .steps, .role-cards { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr; }
 
   .nav__toggle { display: inline-flex; }

@@ -16,6 +16,7 @@ repo touches that one.
 ```
 /
 ├── index.html                # Home page (hero, features, how it works, pricing, FAQ, CTA)
+├── roles/index.html          # Roles & permissions table — sourced from the app repo, see below
 ├── privacy/index.html        # Privacy Policy (placeholder — see callout on the page)
 ├── terms/index.html          # Terms & Conditions (placeholder — see callout on the page)
 ├── 404.html                  # Not-found page
@@ -85,6 +86,29 @@ Display names are exactly "Tier 1" / "Tier 2" / "Tier 3" per `BILLING_CATALOGUE[
 in that file — the app repo's own `CLAUDE.md` notes public-facing tier naming (Gate G6) was
 still open as of the last build log entry, so friendlier plan names may be worth revisiting
 later. The numbers themselves are not placeholders.
+
+## Roles & permissions page (`/roles/`)
+
+Sourced word-for-word from `packages/types/src/rbac.ts` in the Fault Reporting Platform
+(Dispatch app) repo — `ROLE_LABELS`, `ROLE_DESCRIPTIONS`, `CAPABILITY_DESCRIPTIONS`,
+`CAPABILITY_GROUPS` and `DATA_SCOPED_CAPABILITIES` — and cross-checked against the actual
+in-app rendering at `apps/web/src/app/dashboard/settings/roles/page.tsx`, so the group
+order, row order, "own only" logic and footnote wording match the in-app table exactly.
+
+Two differences from the in-app table, both deliberate:
+
+- **Role label**: the app's third role is coded and labelled `Electrician`
+  (`ROLE_LABELS.electrician`). This site presents it as **"Field Technician"** instead,
+  to match the site's trade-neutral positioning — the description text itself is
+  otherwise verbatim. This is a display-only choice made for this page; the app's
+  internal role name is unchanged.
+- **Row omitted**: `view_audit_log` ("View the activity log") is left out of the public
+  table — that in-app screen doesn't exist yet, so the public site doesn't advertise it.
+  `manage_users` ("Manage the team") is included even though its invite-flow UI is still
+  being built, per instruction. Everything else from `CAPABILITY_DESCRIPTIONS` is included.
+
+If the RBAC matrix changes in the app repo, this page needs a manual update to match —
+there's no shared build step between the two repos.
 
 ## Design notes
 
