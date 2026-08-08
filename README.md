@@ -98,9 +98,9 @@ plumbers, HVAC, other field-service teams). One inconsistency worth knowing abou
 app's actual in-product role names are fixed as **Owner / Office Admin / Electrician**
 (`packages/types/src/rbac.ts`, Gate D-06 in the app's `CLAUDE.md`) — so a plumbing or
 HVAC customer will literally see a role called "Electrician" inside the product today.
-The "Team roles & permissions" feature card on this site names that role as-is (for
-accuracy) while framing the surrounding copy as trade-neutral. Worth a product-side
-rename if the trades-general positioning sticks.
+The "Team roles & permissions" feature card on this site now uses trade-neutral wording
+throughout (no longer names the role), so this is purely a product-side naming gap, not
+a site-copy one. Worth a product-side rename if the trades-general positioning sticks.
 
 ## Quality floor
 
