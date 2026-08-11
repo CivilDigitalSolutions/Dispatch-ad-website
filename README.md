@@ -104,11 +104,44 @@ Two differences from the in-app table, both deliberate:
   internal role name is unchanged.
 - **Row omitted**: `view_audit_log` ("View the activity log") is left out of the public
   table — that in-app screen doesn't exist yet, so the public site doesn't advertise it.
-  `manage_users` ("Manage the team") is included even though its invite-flow UI is still
-  being built, per instruction. Everything else from `CAPABILITY_DESCRIPTIONS` is included.
+  `manage_users` ("Manage the team") is included; its invite-flow UI (`TeamInvitesCard.tsx`,
+  shareable invite links/codes, seat-enforced) has since shipped — see the feature survey
+  below. Everything else from `CAPABILITY_DESCRIPTIONS` is included.
 
 If the RBAC matrix changes in the app repo, this page needs a manual update to match —
 there's no shared build step between the two repos.
+
+## Feature accuracy — surveyed against the app repo, 2026-08-11
+
+Before adding a feature to this site, its shipped status was confirmed against
+`Build_Log.md`, `docs/INVOICING_PLAN.md`/`docs/SCHEDULING_PLAN.md`, the ADRs and the code
+in the Fault Reporting Platform (Dispatch app) repo — never assumed from the plan docs
+alone, since a plan describes intent and `Build_Log.md` records what was actually run and
+verified.
+
+**Added as available (confirmed deployed):**
+
+- **Invoicing** (draft → issue → branded PDF → email → record payments → credit notes):
+  Build_Log STEP 27–42 ("Invoicing Phase A"), deployed live at STEP 42 (2026-08-10).
+- **In-app invoice management**: the `/dashboard/invoices` org-wide list and per-job
+  invoice table, STEP 41, deployed with Phase A.
+- **Card payments via Stripe** (customer pays a secure link; Dispatch takes a flat 2%
+  platform fee, D-15): Build_Log STEP 43–48 ("Invoicing Phase B", Stripe Connect),
+  ✅ Gate G8 resolved and deployed live at STEP 48 (2026-08-10) — confirmed via the
+  deploy log's live signature-verification probes, not just the code existing.
+- **Team invites** (shareable invite code/link, role selected at invite time, seat-capped):
+  `TeamInvitesCard.tsx`, committed 2026-08-08 (commit `4b322ad`) and wired into
+  `/dashboard/settings`; live since the next hosting deploy. Not itself called out in
+  `Build_Log.md` by step number, but confirmed shipped by reading the component, its
+  backend callables (`functions/src/invites.ts`) and their emulator tests.
+- **Job map** (List/Kanban/Map, clustering, filters, radius search, directions): already
+  advertised pre-2026-08-11; re-confirmed live via Gate G3 (resolved STEP 24).
+
+**Added as "coming soon" (confirmed planned, not built):** a scheduling calendar for jobs
+and appointments. `docs/SCHEDULING_PLAN.md` states plainly: *"Status: planned, not
+started. Nothing below has been built."* No calendar/scheduling code or committed branch
+exists in the app repo. Presented on this site in a clearly separate, distinctly-styled
+"Coming soon" section — never mixed into the main features grid.
 
 ## Design notes
 

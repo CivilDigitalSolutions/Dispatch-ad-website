@@ -220,6 +220,14 @@ h4 { font-size: var(--fs-500); }
 .card h3 { font-size: var(--fs-600); color: var(--navy); margin-bottom: var(--sp-3); }
 .card p { color: var(--muted); margin: 0; }
 
+/* ---- Roadmap / coming soon ------------------------------------------------ */
+.roadmap-card { max-width: 640px; margin: 0 auto; text-align: left; }
+.roadmap-badge {
+  display: inline-block; background: var(--surface); border: 1px solid var(--line); color: var(--muted);
+  font-size: var(--fs-300); font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+  padding: 2px var(--sp-3); border-radius: var(--radius-pill); margin-bottom: var(--sp-3);
+}
+
 /* ---- Steps -------------------------------------------------------------- */
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-6); }
 .step { text-align: center; }
