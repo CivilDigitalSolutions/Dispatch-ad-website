@@ -129,6 +129,10 @@ verified.
   platform fee, D-15): Build_Log STEP 43–48 ("Invoicing Phase B", Stripe Connect),
   ✅ Gate G8 resolved and deployed live at STEP 48 (2026-08-10) — confirmed via the
   deploy log's live signature-verification probes, not just the code existing.
+  **Wording note (2026-08-11 correction):** the feature card and FAQ on the homepage
+  describe this generically ("pay by card online") and name neither Stripe nor the fee —
+  the owner wants the provider/fee detail kept to `/terms/` and `/privacy/` only, not the
+  sales copy. Both of those pages now name Stripe and disclose the 2% platform fee.
 - **Team invites** (shareable invite code/link, role selected at invite time, seat-capped):
   `TeamInvitesCard.tsx`, committed 2026-08-08 (commit `4b322ad`) and wired into
   `/dashboard/settings`; live since the next hosting deploy. Not itself called out in
