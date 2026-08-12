@@ -23,6 +23,7 @@ repo touches that one.
 ├── CNAME                     # Pins dispatch.civildigital.co.uk
 ├── robots.txt / sitemap.xml
 ├── .nojekyll                  # So Pages doesn't run Jekyll processing over the site
+├── favicon.ico                # 16/32/48 multi-size, for anything probing the site root
 ├── images/
 │   ├── favicon.png            # 32×32, rendered from dispatch-logo.svg
 │   ├── apple-touch-icon.png   # 180×180, rendered from dispatch-logo.svg
@@ -75,11 +76,29 @@ Two rules that are easy to break by accident:
   fault severity (ADR-0002 Decision 1, still in force). The logo this replaced used an amber wave,
   which is exactly the collision the reservation exists to prevent.
 
-**To rebrand or re-render:** edit `dispatch-logo.svg`, then regenerate `dispatch-logo.png`
-(1024), `-512`, `-192`, `images/favicon.png` (32) and `images/apple-touch-icon.png` (180) from it.
-Any renderer works — headless Chromium screenshotting the SVG at each size is sufficient and was
-how the current set was produced. `images/og-default.png` is a 1200×630 graphite canvas with the
-mark and wordmark top-left and the strapline beneath.
+**To rebrand or re-render:** edit `dispatch-logo.svg`, then regenerate every raster from it —
+`dispatch-logo.png` (1024), `-512`, `-192`, `images/favicon.png` (32),
+`images/apple-touch-icon.png` (180) and the root `favicon.ico` (16/32/48).
+
+Use a real SVG rasteriser, **not** a headless-browser screenshot. Chromium was used for the first
+pass and produced two silent defects: it clipped the bottom of the squircle at every size, and it
+cannot size a window below roughly 50px, so the 32px favicon came out blank. `cairosvg` rasterises
+the vector directly:
+
+```python
+import cairosvg
+svg = open('assets/brand/dispatch-logo.svg', 'rb').read()
+for size in (16, 32, 48, 180, 192, 512, 1024):
+    cairosvg.svg2png(bytestring=svg, output_width=size, output_height=size,
+                     write_to=f'tile-{size}.png')
+```
+
+Render each size from the vector rather than downscaling one master — at 16 and 32 a direct render
+keeps the stroke crisp where a resample smears it. Build the `.ico` from the 48px render with
+Pillow, `sizes=[(16,16),(32,32),(48,48)]`.
+
+`images/og-default.png` is a 1200×630 graphite canvas with the mark and wordmark top-left and the
+strapline beneath; that one is a page composition, so a browser screenshot is the right tool.
 
 ## Pricing — sourced from the app repo, not invented
 
