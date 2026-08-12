@@ -24,15 +24,19 @@ repo touches that one.
 ├── robots.txt / sitemap.xml
 ├── .nojekyll                  # So Pages doesn't run Jekyll processing over the site
 ├── images/
-│   ├── favicon.png            # 48×48, generated from the real logo
-│   ├── apple-touch-icon.png   # 180×180, generated from the real logo
-│   └── og-default.png         # 1200×630 Open Graph banner, composed from the real logo
+│   ├── favicon.png            # 32×32, rendered from dispatch-logo.svg
+│   ├── apple-touch-icon.png   # 180×180, rendered from dispatch-logo.svg
+│   └── og-default.png         # 1200×630 Open Graph banner
 └── assets/
     ├── css/styles.css         # Shared stylesheet — same design tokens as the Dispatch app
     ├── js/main.js             # Mobile nav toggle + footer year, progressive enhancement only
+    ├── fonts/
+    │   └── Archivo-Variable.woff2  # Brand type. Self-hosted: no font CDN at runtime
     └── brand/
-        ├── dispatch-logo.png      # Master logo file (1024×1024, as supplied) — swap this to rebrand
-        └── dispatch-logo-192.png  # Lightweight 192×192 copy used on-page (nav/hero/footer)
+        ├── dispatch-logo.svg      # ★ CANONICAL mark — every raster below derives from this
+        ├── dispatch-logo.png      # 1024×1024 raster, for tools that cannot take SVG
+        ├── dispatch-logo-512.png  # 512×512
+        └── dispatch-logo-192.png  # 192×192
 ```
 
 ## Publish (GitHub Pages, deploy from root)
@@ -54,18 +58,28 @@ across all HTML files — it appears once per page in the nav, hero, pricing car
 
 ## Logo & brand assets
 
-`assets/brand/dispatch-logo.png` is the owner-supplied logo (copied in as-is, 1024×1024,
-no background removed — the source file has a solid white background, not transparency).
-`assets/brand/dispatch-logo-192.png` is a resized copy used for on-page display so pages
-don't ship a 1MB image for a 40px nav icon. `images/favicon.png`, `images/apple-touch-icon.png`
-and `images/og-default.png` were all generated from the master file via .NET
-`System.Drawing` (no ImageMagick/PIL was available in the build environment, but
-`System.Drawing` covered resizing and compositing the OG banner directly).
+**`assets/brand/dispatch-logo.svg` is canonical.** Everything else is derived from it, so
+edit the SVG and re-render — never touch a PNG directly.
 
-**To rebrand:** replace `dispatch-logo.png`, then regenerate `dispatch-logo-192.png`,
-`favicon.png`, `apple-touch-icon.png` and `og-default.png` from it (any image tool works;
-the OG banner is a 1200×630 navy canvas with the logo on the left and "Dispatch" text —
-see git history for the generation script if you want to reproduce that layout exactly).
+The mark is "Sealed" (approved 2026-08-12): a single stroke that opens, travels and stops in a
+solid seal, with the bowl deliberately never rejoining the stem. It is the portal link that burns
+on submission — decision D-03 in the app repo — drawn as a gesture. Palette is "Graphite & Volt".
+The full rationale, including why Dispatch left BoatLog's navy and teal behind, is in
+`docs/adr/0003-brand-identity.md` in the app repo.
+
+Two rules that are easy to break by accident:
+
+- **`--volt #6E56F8` is a fill, not a text colour.** It measures 4.3:1 on a light ground and fails
+  WCAG AA for body text. Accent *text* and focus rings take `--volt-600 #5B43E8` (6.1:1 on white).
+- **Never use red, amber or green anywhere in this brand.** Those are reserved in the app for
+  fault severity (ADR-0002 Decision 1, still in force). The logo this replaced used an amber wave,
+  which is exactly the collision the reservation exists to prevent.
+
+**To rebrand or re-render:** edit `dispatch-logo.svg`, then regenerate `dispatch-logo.png`
+(1024), `-512`, `-192`, `images/favicon.png` (32) and `images/apple-touch-icon.png` (180) from it.
+Any renderer works — headless Chromium screenshotting the SVG at each size is sufficient and was
+how the current set was produced. `images/og-default.png` is a 1200×630 graphite canvas with the
+mark and wordmark top-left and the strapline beneath.
 
 ## Pricing — sourced from the app repo, not invented
 
@@ -149,10 +163,15 @@ exists in the app repo. Presented on this site in a clearly separate, distinctly
 
 ## Design notes
 
-Design tokens (`assets/css/styles.css`) are copied directly from the BoatLog marketing
-site and match the Dispatch app's own tokens (navy `#0B1F3A`, teal `#2EC4B6`, mist
-`#E6EEF2`, system font stack) — see `docs/adr/0002-design-tokens.md` in the app repo,
-which documents the app deliberately carrying BoatLog's brand across.
+Design tokens (`assets/css/styles.css`) match the Dispatch app's own tokens: graphite
+`--ink #0F1216`, `--volt #6E56F8` with `--volt-600 #5B43E8` as the AA-safe text step,
+`--wash #EFF0F3`, Archivo for the wordmark and headings over a system stack for body copy.
+See `docs/adr/0003-brand-identity.md` in the app repo.
+
+These were previously copied from the BoatLog marketing site (navy `#0B1F3A`, teal
+`#2EC4B6`, mist `#E6EEF2`) under ADR-0002. **ADR-0003 supersedes that**: BoatLog already
+owns navy + teal + a squircle monogram inside the Civil Digital portfolio, and the two app
+icons were indistinguishable at 32px. BoatLog is unchanged; Dispatch moved.
 
 **Audience note:** copy is written for trades businesses in general (electricians,
 plumbers, HVAC, other field-service teams). One inconsistency worth knowing about: the
