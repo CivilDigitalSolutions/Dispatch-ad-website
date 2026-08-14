@@ -354,6 +354,12 @@ h4 { font-size: var(--fs-500); }
 .tick-yes { font-size: 1.2em; font-weight: 700; color: var(--volt-600); }
 .tick-no { font-size: 1.2em; color: var(--muted); }
 .own-only { display: block; margin-top: 2px; font-size: 0.75rem; color: var(--muted); }
+/* A caveat that belongs to one table rather than to the whole page — the Financial records
+   asymmetry, where a tick genuinely does not mean what a reader would assume it means. */
+.perm-note {
+  margin: var(--sp-3) 0 0; font-size: var(--fs-300); color: var(--muted);
+  max-width: var(--maxw-prose);
+}
 
 /* ---- FAQ (native details/summary, no JS needed) -------------------------- */
 .faq { max-width: var(--maxw-prose); margin: 0 auto; display: grid; gap: var(--sp-3); }

@@ -128,13 +128,13 @@
                   <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Field Technician: yes</span></td>
                 </tr>
                 <tr>
-                  <th scope="row"><span class="perm-label">Update any job</span><span class="perm-desc">Change the status, severity or site address of any job, including other people's.</span></th>
+                  <th scope="row"><span class="perm-label">Update any job</span><span class="perm-desc">Change the status, priority or site address of any job, including other people's.</span></th>
                   <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Owner: yes</span></td>
                   <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Office Admin: yes</span></td>
                   <td class="role-col"><span class="tick-no" aria-hidden="true">–</span><span class="visually-hidden">Field Technician: no</span></td>
                 </tr>
                 <tr>
-                  <th scope="row"><span class="perm-label">Update your own jobs</span><span class="perm-desc">Change the status, severity or site address of a job assigned to you. Only your own jobs.</span></th>
+                  <th scope="row"><span class="perm-label">Update your own jobs</span><span class="perm-desc">Change the status, priority or site address of a job assigned to you. Only your own jobs.</span></th>
                   <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Owner: yes</span></td>
                   <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Office Admin: yes</span></td>
                   <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="own-only" aria-hidden="true">own only</span><span class="visually-hidden">Field Technician: yes, own records only</span></td>
@@ -168,6 +168,38 @@
                   <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Owner: yes</span></td>
                   <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Office Admin: yes</span></td>
                   <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Field Technician: yes</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Schedule -->
+        <div class="perm-group">
+          <h2>Schedule</h2>
+          <div class="table-wrap">
+            <table class="data-table">
+              <caption class="visually-hidden">Schedule permissions, by role. A tick means the role has the permission.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Permission</th>
+                  <th scope="col" class="role-col">Owner</th>
+                  <th scope="col" class="role-col">Office Admin</th>
+                  <th scope="col" class="role-col">Field Technician</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><span class="perm-label">View the calendar</span><span class="perm-desc">See booked visits on the week calendar. Limited to your own visits unless you can see every job.</span></th>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Owner: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Office Admin: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="own-only" aria-hidden="true">own only</span><span class="visually-hidden">Field Technician: yes, own records only</span></td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="perm-label">Book and move visits</span><span class="perm-desc">Book a job onto the calendar, move it to another time, and cancel a booking. Limited to jobs assigned to you.</span></th>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Owner: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Office Admin: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="own-only" aria-hidden="true">own only</span><span class="visually-hidden">Field Technician: yes, own records only</span></td>
                 </tr>
               </tbody>
             </table>
@@ -244,6 +276,139 @@
           </div>
         </div>
 
+        <!-- Quotes -->
+        <div class="perm-group">
+          <h2>Quotes</h2>
+          <div class="table-wrap">
+            <table class="data-table">
+              <caption class="visually-hidden">Quotes permissions, by role. A tick means the role has the permission.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Permission</th>
+                  <th scope="col" class="role-col">Owner</th>
+                  <th scope="col" class="role-col">Office Admin</th>
+                  <th scope="col" class="role-col">Field Technician</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><span class="perm-label">View quotes</span><span class="perm-desc">See the quotes raised against a job, what was offered, and whether the customer accepted.</span></th>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Owner: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Office Admin: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="own-only" aria-hidden="true">own only</span><span class="visually-hidden">Field Technician: yes, own records only</span></td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="perm-label">Prepare a quote</span><span class="perm-desc">Price up a job and send the quote to the office to be checked and sent to the customer.</span></th>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Owner: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Office Admin: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="own-only" aria-hidden="true">own only</span><span class="visually-hidden">Field Technician: yes, own records only</span></td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="perm-label">Send a quote to the customer</span><span class="perm-desc">Check a prepared quote and send it — this gives it its number and commits the business to the price offered.</span></th>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Owner: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Office Admin: yes</span></td>
+                  <td class="role-col"><span class="tick-no" aria-hidden="true">–</span><span class="visually-hidden">Field Technician: no</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Invoices -->
+        <div class="perm-group">
+          <h2>Invoices &amp; payments</h2>
+          <div class="table-wrap">
+            <table class="data-table">
+              <caption class="visually-hidden">Invoices and payments permissions, by role. A tick means the role has the permission.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Permission</th>
+                  <th scope="col" class="role-col">Owner</th>
+                  <th scope="col" class="role-col">Office Admin</th>
+                  <th scope="col" class="role-col">Field Technician</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><span class="perm-label">View invoices</span><span class="perm-desc">See the invoices raised against a job, what they came to, and whether they have been paid.</span></th>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Owner: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Office Admin: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="own-only" aria-hidden="true">own only</span><span class="visually-hidden">Field Technician: yes, own records only</span></td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="perm-label">Prepare an invoice</span><span class="perm-desc">Write up the work done and the charges for it, and send the invoice to the office to be checked and issued.</span></th>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Owner: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Office Admin: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="own-only" aria-hidden="true">own only</span><span class="visually-hidden">Field Technician: yes, own records only</span></td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="perm-label">Issue an invoice</span><span class="perm-desc">Check a prepared invoice and issue it — this gives it its number and fixes it permanently, so it can no longer be edited.</span></th>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Owner: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Office Admin: yes</span></td>
+                  <td class="role-col"><span class="tick-no" aria-hidden="true">–</span><span class="visually-hidden">Field Technician: no</span></td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="perm-label">Send an invoice</span><span class="perm-desc">Email an issued invoice to the customer, and send it again if they need it.</span></th>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Owner: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Office Admin: yes</span></td>
+                  <td class="role-col"><span class="tick-no" aria-hidden="true">–</span><span class="visually-hidden">Field Technician: no</span></td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="perm-label">Void or credit an invoice</span><span class="perm-desc">Cancel an issued invoice that has not been paid, or raise a credit note against one that has.</span></th>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Owner: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Office Admin: yes</span></td>
+                  <td class="role-col"><span class="tick-no" aria-hidden="true">–</span><span class="visually-hidden">Field Technician: no</span></td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="perm-label">Record a payment</span><span class="perm-desc">Mark an invoice as paid, in full or in part, when money arrives by bank transfer, cash or cheque.</span></th>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Owner: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Office Admin: yes</span></td>
+                  <td class="role-col"><span class="tick-no" aria-hidden="true">–</span><span class="visually-hidden">Field Technician: no</span></td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="perm-label">Change invoice settings</span><span class="perm-desc">Edit invoice and quote numbering, payment terms, the default deposit, VAT and bank details, and the list of common charges.</span></th>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Owner: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Office Admin: yes</span></td>
+                  <td class="role-col"><span class="tick-no" aria-hidden="true">–</span><span class="visually-hidden">Field Technician: no</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Financial records -->
+        <div class="perm-group">
+          <h2>Financial records</h2>
+          <div class="table-wrap">
+            <table class="data-table">
+              <caption class="visually-hidden">Financial records permissions, by role. A tick means the role has the permission.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Permission</th>
+                  <th scope="col" class="role-col">Owner</th>
+                  <th scope="col" class="role-col">Office Admin</th>
+                  <th scope="col" class="role-col">Field Technician</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><span class="perm-label">Record a cost</span><span class="perm-desc">Photograph a receipt and record what it cost, against a job or on its own.</span></th>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Owner: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Office Admin: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Field Technician: yes</span></td>
+                </tr>
+                <tr>
+                  <th scope="row"><span class="perm-label">See and export the books</span><span class="perm-desc">See the full record of money in and out, correct it, and export it for your Making Tax Digital software.</span></th>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Owner: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Office Admin: yes</span></td>
+                  <td class="role-col"><span class="tick-no" aria-hidden="true">–</span><span class="visually-hidden">Field Technician: no</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="perm-note">A Field Technician can record a cost but cannot see the books they added it to — the business&#39;s income, spending and margins are held back from the field, deliberately.</p>
+        </div>
+
         <!-- Templates -->
         <div class="perm-group">
           <h2>Templates</h2>
@@ -315,6 +480,12 @@
                   <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Office Admin: yes</span></td>
                   <td class="role-col"><span class="tick-no" aria-hidden="true">–</span><span class="visually-hidden">Field Technician: no</span></td>
                 </tr>
+                <tr>
+                  <th scope="row"><span class="perm-label">View the activity log</span><span class="perm-desc">See a record of who changed what, and when.</span></th>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Owner: yes</span></td>
+                  <td class="role-col"><span class="tick-yes" aria-hidden="true">✓</span><span class="visually-hidden">Office Admin: yes</span></td>
+                  <td class="role-col"><span class="tick-no" aria-hidden="true">–</span><span class="visually-hidden">Field Technician: no</span></td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -336,7 +507,7 @@
             <img class="brand__mark" src="/assets/brand/dispatch-logo.svg" alt="" aria-hidden="true" width="36" height="36">
             <span class="brand__text">Dispatch</span>
           </a>
-          <p>Fault reporting, job dispatch and reusable report templates for UK trades businesses. Dispatch is operated by Civil Digital.</p>
+          <p>Fault reporting, scheduling, quoting, invoicing and reusable report templates for UK trades businesses. Dispatch is operated by Civil Digital.</p>
         </div>
         <nav aria-label="Product">
           <h2>Product</h2>

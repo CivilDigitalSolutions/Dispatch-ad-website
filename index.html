@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fault Reporting &amp; Job Dispatch Software for Trades | Dispatch</title>
-  <meta name="description" content="Dispatch is UK software for trades businesses — electricians, plumbers, HVAC and other field-service teams: structured customer fault reports, secure portal links, job dispatch with List, Kanban &amp; Map views, invoicing with online card payments, and reusable templates.">
+  <meta name="description" content="Dispatch is UK software for trades businesses — electricians, plumbers, HVAC and other field-service teams: structured customer fault reports, secure portal links, job dispatch with List, Kanban &amp; Map views, a week calendar, quotes with deposits, invoicing with online card payments, and digital records for Making Tax Digital.">
   <link rel="canonical" href="https://dispatch.civildigital.co.uk/">
   <meta name="theme-color" content="#0F1216">
 
@@ -13,7 +13,7 @@
   <meta property="og:site_name" content="Dispatch">
   <meta property="og:locale" content="en_GB">
   <meta property="og:title" content="Dispatch — fault reporting &amp; job dispatch software for trades">
-  <meta property="og:description" content="Structured fault reports, secure customer portal links, job dispatch (List, Kanban &amp; Map), invoicing with card payments and reusable templates — built for UK trades businesses.">
+  <meta property="og:description" content="Structured fault reports, secure customer portal links, job dispatch (List, Kanban &amp; Map), a week calendar, quotes with deposits, invoicing with card payments and reusable templates — built for UK trades businesses.">
   <meta property="og:url" content="https://dispatch.civildigital.co.uk/">
   <meta property="og:image" content="https://dispatch.civildigital.co.uk/images/og-default.png">
   <meta property="og:image:type" content="image/png">
@@ -36,7 +36,7 @@
     "url": "https://dispatch.civildigital.co.uk/",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "description": "Dispatch helps trades businesses — electricians, plumbers, HVAC and other field-service teams — collect structured customer fault reports, manage jobs (List, Kanban and Map), raise and send invoices with online card payment, build reusable report templates, and coordinate teams with role-based access and invites.",
+    "description": "Dispatch helps trades businesses — electricians, plumbers, HVAC and other field-service teams — collect structured customer fault reports, manage jobs (List, Kanban and Map), book visits on a week calendar, send quotes the customer accepts online with an optional deposit, raise and send invoices with online card payment and automatic reminders, keep digital income and expense records for export into Making Tax Digital software, build reusable report templates, and coordinate teams with role-based access and invites.",
     "slogan": "Report. Dispatch. Resolve.",
     "publisher": { "@id": "https://dispatch.civildigital.co.uk/#organization" }
   }
@@ -94,12 +94,22 @@
       {
         "@type": "Question",
         "name": "Can I invoice customers and get paid online?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Raise an invoice from the job, send it as a branded PDF by email, and your customer can pay by card securely online, right from the invoice. See our Terms for details on payment processing." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Raise an invoice from the job, send it as a branded PDF by email, and your customer can pay by card securely online, right from the invoice. Part payments and deposits are supported, and you can switch on automatic reminders for anything that goes past due. See our Terms for details on payment processing." }
       },
       {
         "@type": "Question",
         "name": "Is there a scheduling calendar?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Not yet — a calendar for planning jobs and appointments across your team is on the roadmap and coming soon. Today you can plan and track work with the List, Kanban and Map views." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Book visits onto a week calendar, see who is booked in where, and let the customer know automatically when a visit is booked, moved or cancelled. It sits alongside the List, Kanban and Map views. Dispatch's calendar does not sync with Google Calendar, Outlook or iCal." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I send quotes as well as invoices?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Price a job up, send the quote as a branded PDF, and the customer accepts or declines it from a link — you see the answer in Dispatch. You can ask for a deposit as a percentage of the quote; when the customer accepts, Dispatch raises the deposit invoice so they can pay it by card straight away, and drafts the final invoice ready for when the work is done." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Dispatch handle Making Tax Digital?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Dispatch keeps your income and expenses as digital records — your technicians can photograph a receipt on site — and exports them via a digital link into your own Making Tax Digital software. Dispatch does not file anything with HMRC and is not a substitute for your accountant or your filing software; what gets submitted stays your responsibility." }
       }
     ]
   }
@@ -142,7 +152,7 @@
         <div class="hero__copy">
           <span class="eyebrow">Fault reporting &amp; job software for UK trades</span>
           <h1>Fault reporting and job dispatch, <span class="accent">without the paperwork</span>.</h1>
-          <p class="hero__lead">Collect structured fault reports from customers via a secure link, dispatch the job to your team, and invoice and get paid by card once it's done — with photos, templates and every job status in one place your whole business can trust.</p>
+          <p class="hero__lead">Collect structured fault reports from customers via a secure link, quote for the work, book it into the week, dispatch it to your team, and invoice and get paid by card once it's done — with photos, templates and every job status in one place your whole business can trust.</p>
           <div class="hero__actions">
             <a class="btn btn--primary btn--lg" href="https://app.dispatch.civildigital.co.uk">Start here</a>
             <a class="btn btn--ghost btn--lg" href="#features">See what's included</a>
@@ -228,7 +238,58 @@
               </svg>
             </span>
             <h3>Get paid by card</h3>
-            <p>Customers can pay their invoice by card online from a secure link — no chasing a bank transfer. Record any payment, by card or otherwise, against the invoice as it comes in.</p>
+            <p>Customers can pay their invoice by card online from a secure link — no chasing a bank transfer. Take part payments and deposits, and record any payment, by card or otherwise, against the invoice as it comes in.</p>
+          </article>
+
+          <article class="card">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 4h9l4 4v12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="#0F1216" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M14.5 4v4.5H19" stroke="#0F1216" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M8.5 16.2l1.7 1.7 3.6-3.6" stroke="#5B43E8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <h3>Quotes your customer can accept online</h3>
+            <p>Price a job up on the doorstep, send it as a branded PDF, and the customer accepts or declines from a link — no phone tag. Ask for a deposit as a percentage of the quote, and accepting raises the deposit invoice for you, ready to pay by card.</p>
+          </article>
+
+          <article class="card">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3.5" y="5" width="17" height="15" rx="2.5" stroke="#0F1216" stroke-width="1.8"/>
+                <path d="M3.5 9.5h17" stroke="#0F1216" stroke-width="1.8"/>
+                <path d="M8 3.5v3M16 3.5v3" stroke="#0F1216" stroke-width="1.8" stroke-linecap="round"/>
+                <rect x="6.5" y="12" width="5" height="2.2" rx="1.1" fill="#5B43E8"/>
+                <rect x="12.5" y="15.5" width="5" height="2.2" rx="1.1" fill="#5B43E8"/>
+              </svg>
+            </span>
+            <h3>Week calendar &amp; scheduling</h3>
+            <p>Book visits onto a week calendar and see at a glance who is where. Each card carries the job reference, the time, and the town and postcode. Clashes warn rather than block — a ten-minute call between two jobs is normal working — and the customer gets a confirmation when you book, move or cancel.</p>
+          </article>
+
+          <article class="card">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="8.5" stroke="#0F1216" stroke-width="1.8"/>
+                <path d="M12 7.5v9" stroke="#0F1216" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M14.2 10a2.4 2.4 0 0 0-2.2-1.2c-1.3 0-2.2.7-2.2 1.7 0 2.3 4.4 1.2 4.4 3.5 0 1-.9 1.8-2.2 1.8A2.5 2.5 0 0 1 9.8 14.4" stroke="#5B43E8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <h3>Automatic payment reminders</h3>
+            <p>Switch reminders on and an unpaid invoice chases itself — three emails at 3, 10 and 21 days past due, in your name, then it stops and leaves you to it. Off by default, off per invoice whenever you want, and never sent for an invoice you haven't emailed.</p>
+          </article>
+
+          <article class="card">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="3.5" width="16" height="17" rx="2" stroke="#0F1216" stroke-width="1.8"/>
+                <path d="M8 8h8" stroke="#0F1216" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M8 11.5h4.5" stroke="#0F1216" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M8 16.5l2.4-2.6 2 2 3.6-4" stroke="#5B43E8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <h3>Digital records for Making Tax Digital</h3>
+            <p>Photograph a receipt on site and record what it cost. Dispatch keeps your income and expenses as digital records and exports them via a digital link into your own Making Tax Digital software — it never files anything with HMRC, and what you submit stays yours to check.</p>
           </article>
 
           <article class="card">
@@ -272,21 +333,6 @@
       </div>
     </section>
 
-    <!-- Coming soon -->
-    <section class="section section--tint" id="roadmap" aria-labelledby="roadmap-h">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">On the roadmap</p>
-          <h2 id="roadmap-h">Coming soon</h2>
-        </div>
-        <article class="card roadmap-card">
-          <span class="roadmap-badge">Coming soon</span>
-          <h3>Calendar &amp; scheduling</h3>
-          <p>A scheduling calendar for planning jobs and appointments across your team — see who's booked in where, alongside the List, Kanban and Map views you already have. In development, not yet available.</p>
-        </article>
-      </div>
-    </section>
-
     <!-- How it works -->
     <section class="section section--tint" id="how" aria-labelledby="how-h">
       <div class="container">
@@ -303,12 +349,12 @@
           <div class="step">
             <span class="step__num" aria-hidden="true">2</span>
             <h3>Dispatch</h3>
-            <p>The report becomes a job. Assign it to a team member and track it on the List, Kanban board or Map, however your business works.</p>
+            <p>The report becomes a job. Quote for it if the customer needs a price first, then assign it, book it onto the week calendar and track it on the List, Kanban board or Map — however your business works.</p>
           </div>
           <div class="step">
             <span class="step__num" aria-hidden="true">3</span>
             <h3>Resolve</h3>
-            <p>Your technician updates status and adds their own notes and photos as the job progresses — then invoice the customer and get paid by card, without leaving Dispatch.</p>
+            <p>Your technician updates status and adds their own notes, photos and costs as the job progresses — then invoice the customer and get paid by card, without leaving Dispatch.</p>
           </div>
         </div>
       </div>
@@ -320,7 +366,7 @@
         <div class="section-head">
           <p class="eyebrow">Pricing</p>
           <h2 id="pricing-h">Simple plans, priced by team size</h2>
-          <p>Every plan includes every feature — fault reports, the customer portal, job dispatch and templates. Plans differ only by how many seats and templates you need.</p>
+          <p>Every plan includes every feature — fault reports, the customer portal, job dispatch, the calendar, quotes, invoicing and card payments, financial records and templates. Plans differ only by how many seats and templates you need.</p>
         </div>
         <div class="pricing-grid">
 
@@ -404,11 +450,19 @@
           </details>
           <details>
             <summary>Can I invoice customers and get paid online?</summary>
-            <p>Yes. Raise an invoice from the job, send it as a branded PDF by email, and your customer can pay by card securely online, right from the invoice. See our <a href="/terms/">Terms</a> for details on payment processing.</p>
+            <p>Yes. Raise an invoice from the job, send it as a branded PDF by email, and your customer can pay by card securely online, right from the invoice. Part payments and deposits are supported, and you can switch on automatic reminders for anything that goes past due. See our <a href="/terms/">Terms</a> for details on payment processing.</p>
           </details>
           <details>
             <summary>Is there a scheduling calendar?</summary>
-            <p>Not yet — a calendar for planning jobs and appointments across your team is <a href="#roadmap">on the roadmap</a> and coming soon. Today you can plan and track work with the List, Kanban and Map views.</p>
+            <p>Yes. Book visits onto a week calendar, see who is booked in where, and let the customer know automatically when a visit is booked, moved or cancelled. It sits alongside the List, Kanban and Map views. Dispatch's calendar does not sync with Google Calendar, Outlook or iCal.</p>
+          </details>
+          <details>
+            <summary>Can I send quotes as well as invoices?</summary>
+            <p>Yes. Price a job up, send the quote as a branded PDF, and the customer accepts or declines it from a link — you see the answer in Dispatch. You can ask for a deposit as a percentage of the quote; when the customer accepts, Dispatch raises the deposit invoice so they can pay it by card straight away, and drafts the final invoice ready for when the work is done.</p>
+          </details>
+          <details>
+            <summary>Does Dispatch handle Making Tax Digital?</summary>
+            <p>Dispatch keeps your income and expenses as digital records — your technicians can photograph a receipt on site — and exports them via a digital link into your own Making Tax Digital software. Dispatch does not file anything with HMRC and is not a substitute for your accountant or your filing software; what gets submitted stays your responsibility.</p>
           </details>
         </div>
       </div>
@@ -438,7 +492,7 @@
             <img class="brand__mark" src="/assets/brand/dispatch-logo.svg" alt="" aria-hidden="true" width="36" height="36">
             <span class="brand__text">Dispatch</span>
           </a>
-          <p>Fault reporting, job dispatch and reusable report templates for UK trades businesses. Dispatch is operated by Civil Digital.</p>
+          <p>Fault reporting, scheduling, quoting, invoicing and reusable report templates for UK trades businesses. Dispatch is operated by Civil Digital.</p>
         </div>
         <nav aria-label="Product">
           <h2>Product</h2>
